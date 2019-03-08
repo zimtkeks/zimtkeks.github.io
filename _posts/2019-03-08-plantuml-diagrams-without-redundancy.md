@@ -8,7 +8,7 @@ title: Writing PlantUML diagrams without redundancy
 
 -----
 
-In order to keep this blog post concise, I'll walk through a small, condensed example of a software architecture. It is illustrated in form of a class and sequence diagram. You can find the diagram code on [github](https://github.com/zimtkeks/zimtkeks.github.io/tree/master/_posts/2019-03-08-plantuml-diagrams-without-redundancy/).
+In order to keep this blog post concise, I'll walk through a small, condensed example of a software architecture. It is illustrated in form of a class and sequence diagram. All PlantUML diagrams are [available on github](https://github.com/zimtkeks/zimtkeks.github.io/tree/master/static/2019-03-08-plantuml-diagrams-without-redundancy).
 
 When rendered, the class and sequence diagrams look like this:
 
