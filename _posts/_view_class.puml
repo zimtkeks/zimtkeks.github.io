@@ -1,0 +1,30 @@
+@startuml
+!include_many _common_class.iuml
+
+left header
+Created by @StefanDensow for PlantUML illustration.
+endheader
+
+' include class content; we can omit these to
+' have all class boxes contain only the class name
+!include _classes.iuml!Concierge
+!include _classes.iuml!Tourist
+!include _classes.iuml!Taxi
+!include _classes.iuml!ITaxiListener
+!include _classes.iuml!TaxiManager
+!include _classes.iuml!InstaCab
+!include _classes.iuml!SpeedyCab
+
+Concierge o..> Taxi: calls >
+Concierge "1" o--> "1" TaxiManager: calls >
+Concierge o--> Tourist: gets tip\nfrom >
+
+Taxi <--* TaxiManager: owns <
+Taxi o-> Tourist: gets fee\nfrom >
+Taxi o-[COLOR_CALLBACK]l-> ITaxiListener: calls >
+
+ITaxiListener <-[COLOR_CALLBACK]-+ TaxiManager: provides\nimplementation <
+
+TaxiManager <|-- InstaCab
+TaxiManager <|-- SpeedyCab
+@enduml

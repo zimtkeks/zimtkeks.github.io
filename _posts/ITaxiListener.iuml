@@ -1,0 +1,19 @@
+@startuml(id=PARTICIPANT)
+participant ITaxiListener COLOR_CALLBACK
+@enduml
+
+@startuml(id=COMMON)
+!include _common_seq.iuml
+!define ITaxiListener_DELEGATE TaxiManager
+' other file-local stuff goes here
+@enduml
+
+@startuml(id=onAvailable)
+!include ITaxiListener.iuml!COMMON
+CALL_METHOD(ITaxiListener, ITaxiListener_DELEGATE, onAvailable)
+@enduml
+
+@startuml(id=signOff)
+!include ITaxiListener.iuml!COMMON
+CALL_METHOD(ITaxiListener, ITaxiListener_DELEGATE, signOff)
+@enduml

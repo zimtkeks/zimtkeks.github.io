@@ -1,0 +1,30 @@
+@startuml
+!include _common_seq.iuml
+
+left header
+Created by @StefanDensow for PlantUML illustration.
+endheader
+
+' have an outside participant to make arrows for init() and run() visible
+participant Boss as "Boss <&person>"
+
+!include Concierge.iuml!PARTICIPANT
+!include Tourist.iuml!PARTICIPANT
+!include Taxi.iuml!PARTICIPANT
+!include ITaxiListener.iuml!PARTICIPANT
+!include TaxiManager.iuml!PARTICIPANT
+!include SpeedyCab.iuml!PARTICIPANT
+
+== Initialization ==
+
+CALL_METHOD(Boss, Concierge, init)
+
+== Running ==
+
+CALL_METHOD_ASYNC(Boss, Concierge, run)
+loop incoming tourist groups (until sunset)
+    CALL_METHOD(Boss, Concierge, add)
+end
+CALL_METHOD(Boss, Concierge, goHome)
+
+@enduml

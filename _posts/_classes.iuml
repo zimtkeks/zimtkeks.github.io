@@ -1,0 +1,95 @@
+@startuml(id=COMMON)
+!include _common_class.iuml
+@enduml
+
+@startuml(id=Concierge)
+!include _classes.iuml!COMMON
+class Concierge {
+    Gets a tip from a ""Tourist"", seats
+    him/her into a taxi and sends it to
+    one of the top 10 sights in the area.
+    ..
+    + init()
+    + run() TAG(ASYNC)
+    + add(Tourist)
+    ..
+    - TaxiManager mTaxiManager
+    - List<Location> mTop10Sights
+    - <&lock-locked> List<Tourist> mGuests
+}
+@enduml
+
+@startuml(id=Taxi)
+!include _classes.iuml!COMMON
+class Taxi {
+    Takes a ""Tourist"" to a given location,
+    gets a fee before dropoff.
+    Calls ""onAvailable()"" when
+    tourist has been dropped off.
+    --
+    + enter(Tourist)
+    + goTo(Location) TAG(ASYNC)
+    ..
+    - dropOff(Tourist)
+    - Tourist mTourist
+    - ITaxiListener mListener
+}
+@enduml
+
+@startuml(id=Tourist)
+!include _classes.iuml!COMMON
+class Tourist {
+    + int payCash(amount)
+    ..
+    - int mCashAmount
+}
+@enduml
+
+@startuml(id=ITaxiListener)
+!include _classes.iuml!COMMON
+interface ITaxiListener COLOR_CALLBACK {
+    - onAvailable(Taxi)
+    - signOff(Taxi)
+}
+@enduml
+
+@startuml(id=TaxiManager)
+!include _classes.iuml!COMMON
+class TaxiManager <<abstract>> {
+    ""getNewInstance()"" randomly selects
+    a concrete ""TaxiManager"" child for
+    instantiation to maintain fairness
+    between the cab companies.
+    ..
+    + {static} TaxiManager getNewInstance()
+    + {abstract} Optional<Taxi> requestTaxi()
+    .. ITaxiListener ..
+    + {abstract} onAvailable(Taxi)
+    ..
+    # List<Taxi> mAvailableTaxis
+    # List<Taxi> mOccupiedTaxis
+    # <&lock-locked> mTaxiLock 
+}
+@enduml
+
+@startuml(id=InstaCab)
+!include _classes.iuml!COMMON
+class InstaCab {
+    //<Insert catchy slogan here>//
+    .. TaxiManager ..
+    + Optional<Taxi> requestTaxi()
+    .. ITaxiListener ..
+    + onAvailable(Taxi)
+}
+@enduml
+
+@startuml(id=SpeedyCab)
+!include _classes.iuml!COMMON
+class SpeedyCab {
+    //We put the pedal to the metal!//
+    .. TaxiManager ..
+    + Optional<Taxi> requestTaxi()
+    .. ITaxiListener ..
+    + onAvailable(Taxi)
+}
+@enduml

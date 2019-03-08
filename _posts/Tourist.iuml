@@ -1,0 +1,12 @@
+@startuml(id=PARTICIPANT)
+participant Tourist
+@enduml
+
+@startuml(id=COMMON)
+!include _common_seq.iuml
+@enduml
+
+@startuml(id=payCash)
+!include Tourist.iuml!COMMON
+note over Tourist: return some money
+@enduml

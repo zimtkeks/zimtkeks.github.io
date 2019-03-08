@@ -1,0 +1,24 @@
+@startuml
+
+!include _common.iuml
+
+!define NOTE_TODO(PARTICIPANT) note over PARTICIPANT #hotpink: TODO
+
+!definelong CALL_METHOD(FROM_CLASS, TO_CLASS, FUNC_NAME, ARG = "", RETURN_LABEL = "")
+    FROM_CLASS -> TO_CLASS: FUNC_NAME(ARG)
+    activate TO_CLASS
+        !include_many TO_CLASS.iuml!FUNC_NAME
+    FROM_CLASS <-- TO_CLASS: RETURN_LABEL
+    deactivate TO_CLASS
+!enddefinelong
+
+!definelong CALL_METHOD_ASYNC(FROM_CLASS, TO_CLASS, FUNC_NAME, ARG = "", RETURN_LABEL = "")
+    FROM_CLASS -> TO_CLASS: FUNC_NAME(ARG) TAG(ASYNC)
+    activate TO_CLASS
+    FROM_CLASS <-- TO_CLASS: RETURN_LABEL TAG(ASYNC) return
+        !include_many TO_CLASS.iuml!FUNC_NAME
+    FROM_CLASS <-- TO_CLASS: TAG(ASYNC) finish
+    deactivate TO_CLASS
+!enddefinelong
+
+@enduml

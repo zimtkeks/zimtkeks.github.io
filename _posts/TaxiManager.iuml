@@ -1,0 +1,37 @@
+@startuml(id=PARTICIPANT)
+participant TaxiManager
+@enduml
+
+@startuml(id=COMMON)
+!include _common_seq.iuml
+!define TaxiManager_DELEGATE SpeedyCab
+' other file-local stuff goes here
+@enduml
+
+@startuml(id=getNewInstance)
+!include TaxiManager.iuml!COMMON
+note over TaxiManager
+randomly decide which concrete
+subclass to instantiate
+end note
+CALL_METHOD(TaxiManager, TaxiManager_DELEGATE, TaxiManager_DELEGATE)
+@enduml
+
+@startuml(id=requestTaxi)
+!include TaxiManager.iuml!COMMON
+CALL_METHOD(TaxiManager, TaxiManager_DELEGATE, requestTaxi)
+@enduml
+
+'==========================
+' ITaxiListener
+'==========================
+
+@startuml(id=onAvailable)
+!include TaxiManager.iuml!COMMON
+NOTE_TODO(TaxiManager)
+@enduml
+
+@startuml(id=signOff)
+!include TaxiManager.iuml!COMMON
+NOTE_TODO(TaxiManager)
+@enduml

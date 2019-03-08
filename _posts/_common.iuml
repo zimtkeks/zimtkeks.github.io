@@ -1,0 +1,13 @@
+@startuml
+' this file contains definitions common to all diagram types
+
+' re-usable color definitions with purpose
+!define COLOR_NATIVE #LightGray
+!define COLOR_CALLBACK #tan
+
+' Consolas is ok on Windows, Menlo on macOS
+skinparam DefaultMonospacedFontName Menlo
+
+!define TAG(NAME) <color:blue>**NAME**</color>
+
+@enduml

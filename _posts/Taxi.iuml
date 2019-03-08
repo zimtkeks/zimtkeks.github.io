@@ -1,0 +1,31 @@
+@startuml(id=PARTICIPANT)
+participant Taxi
+@enduml
+
+@startuml(id=COMMON)
+!include _common_seq.iuml
+@enduml
+
+@startuml(id=dropOff)
+!include Taxi.iuml!COMMON
+note over Taxi: drop off all passengers
+@enduml
+
+@startuml(id=enter)
+!include Taxi.iuml!COMMON
+note over Taxi: all passenger get in
+@enduml
+
+@startuml(id=goTo)
+!include Taxi.iuml!COMMON
+note over Taxi: drive to destination
+loop all passengers
+    CALL_METHOD(Taxi, Tourist, payCash, amount)
+end
+CALL_METHOD(Taxi, Taxi, dropOff)
+alt shift is over
+    CALL_METHOD(Taxi, ITaxiListener, signOff, this)
+else shift is not over yet
+    CALL_METHOD(Taxi, ITaxiListener, onAvailable, this)
+end
+@enduml

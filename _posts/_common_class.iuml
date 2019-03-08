@@ -1,0 +1,8 @@
+@startuml
+
+!include _common.iuml
+
+' hide member/function areas when they would be empty anyway to save space
+hide empty members
+
+@enduml
