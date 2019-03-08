@@ -8,7 +8,14 @@ title: Writing PlantUML diagrams without redundancy
 
 -----
 
-In order to keep this blog post concise, I'll walk through a small, condensed example of a software architecture. It is illustrated in form of a class and sequence diagram. You can find the diagram code on [github](TODO).
+In order to keep this blog post concise, I'll walk through a small, condensed example of a software architecture. It is illustrated in form of a class and sequence diagram. You can find the diagram code on [github](https://github.com/zimtkeks/zimtkeks.github.io/tree/master/_posts/2019-03-08-plantuml-diagrams-without-redundancy/).
+
+When rendered, the class and sequence diagrams look like this:
+
+| Class diagram `_view_class.puml` | Sequence diagram `_view_seq.puml` |
+|:-:|:-:|
+| [![Class diagram](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png){: height="360px"}](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png) | [![Sequence diagram](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png){: height="360px"}](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png) |
+
 
 The walkthrough assumes some knowledge about PlantUML [class](http://plantuml.com/class-diagram) and [sequence](http://plantuml.com/sequence-diagram) diagram syntax and especially its [preprocessing directives](http://plantuml.com/preprocessing).
 
