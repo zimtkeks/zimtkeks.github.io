@@ -14,8 +14,7 @@ When rendered, the class and sequence diagrams look like this:
 
 | Class diagram `_view_class.puml` | Sequence diagram `_view_seq.puml` |
 |:-:|:-:|
-| [![Class diagram](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png){: height="360px"}](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png) | [![Sequence diagram](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png){: height="360px"}](../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png) |
-
+| <a href="../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png"><img src="../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_class.png" alt="Class diagram" style="max-height: 360px; width: auto"/></a> | <a href="../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png"><img src="../../../../static/2019-03-08-plantuml-diagrams-without-redundancy/view_seq.png" alt="Sequence diagram" style="max-height: 360px; width: auto"/></a> |
 
 The walkthrough assumes some knowledge about PlantUML [class](http://plantuml.com/class-diagram) and [sequence](http://plantuml.com/sequence-diagram) diagram syntax and especially its [preprocessing directives](http://plantuml.com/preprocessing).
 
