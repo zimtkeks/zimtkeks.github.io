@@ -18,7 +18,8 @@ When rendered, the class and sequence diagrams look like this:
 
 The walkthrough assumes some knowledge about PlantUML [class](http://plantuml.com/class-diagram) and [sequence](http://plantuml.com/sequence-diagram) diagram syntax and especially its [preprocessing directives](http://plantuml.com/preprocessing).
 
-The example diagrams consist of files which are intended to be rendered (`.puml`) or included (`.iuml`):
+The example diagrams consist of files which are intended to be rendered (`.puml`) or included (`.iuml`):
+
 + `.puml`
     + `_view_class.puml` - class diagram
     + `_view_seq.puml` - sequence diagram
@@ -42,9 +43,10 @@ The example diagrams consist of files which are intended to be rendered (`.puml
 
 The content of each class is written into a separate block in `_classes.iuml`, each block named exactly the class name. Multiple class diagrams thereby can share the same class content, avoiding redundancy.
 
-Class relations are directly written into `_view_class.puml` since they generally do not carry over completely to other diagrams, which may show a different subset of classes from `_classes.iuml`. Also, relations promote a certain layout, as described below.
+Class relations are directly written into `_view_class.puml` since they generally do not carry over completely to other diagrams, which may show a different subset of classes from `_classes.iuml`. Also, relations promote a certain layout, as described below.
 
 PlantUML tries to find the optimal class layout using some clever algorithms to let you focus only on the content. These efforts can be supported by following these hints:
+
 + If `A` should be above `B`, `A` should to be on the left of the arrow, e.g. `A --> B`. Since the layout engine tries very hard to follow this scheme, I consider this the *left-is-up* rule (I'm not aware of any other name).
 + Short arrows as in `A -> B` prefer to generate *A left of B* whereas longer arrows as in `A --> B` prefer to generate *A above B*.
 + Additionally, the [direction of arrows](http://plantuml.com/component-diagram) can be *suggested* to the layout engine.
@@ -75,6 +77,7 @@ It can be used like this: `CALL_METHOD(Concierge, TaxiManager, requestTaxi, , em
 Hint: Block names can also contain special characters, e.g. `id=~CMyClass` to denote a C++ destructor.
 
 Note that this macro makes a few assumptions that I personally found reasonable for my purposes.
+
 + Classes are calling methods on each other.
 + Methods of a class are stored as separate blocks in a file named `<classname>.iuml`.
     + If a method block is missing, PlantUML ignores that - very useful while writing diagrams.
