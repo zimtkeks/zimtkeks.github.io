@@ -1,8 +1,10 @@
 ---
-title: Writing PlantUML diagrams without redundancy
+title: PlantUML diagrams without redundancy
+image: /static/2019-03-08-plantuml-diagrams-without-redundancy/share-image.png
+summary: Writing class/sequence diagrams using PlantUML quickly introduces redundant code. This post demonstrates preprocessor techniques to avoid redundancy and make extensive diagrams feasible.
 ---
 
-# Writing PlantUML diagrams without redundancy
+# PlantUML diagrams without redundancy
 
 **tl;dr** This blog post demonstrates some practices that use the [preprocessor](http://plantuml.com/preprocessing) of [PlantUML](http://plantuml.com) to minimize the amount of redundant code when writing class/sequence diagrams. The presented ideas can be adapted to other PlantUML diagram types to achieve similar benefits.
 
