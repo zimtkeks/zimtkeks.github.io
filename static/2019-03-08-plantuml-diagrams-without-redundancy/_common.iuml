@@ -1,9 +1,6 @@
 @startuml
 ' this file contains definitions common to all diagram types
 
-'enable new preprocessor in plantuml V1.2019.5
-!preprocessorV2
-
 ' re-usable color definitions with purpose
 !define COLOR_NATIVE #LightGray
 !define COLOR_CALLBACK #tan
