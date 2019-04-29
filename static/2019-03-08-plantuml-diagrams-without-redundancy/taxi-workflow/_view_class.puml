@@ -1,5 +1,5 @@
 @startuml
-!include _common_class.iuml
+!include ../_common_class.iuml
 
 left header
 Created by @StefanDensow for PlantUML illustration.

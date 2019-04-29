@@ -3,7 +3,7 @@ participant ITaxiListener COLOR_CALLBACK
 @enduml
 
 @startuml(id=COMMON)
-!include _common_seq.iuml
+!include ../_common_seq.iuml
 !define ITaxiListener_DELEGATE TaxiManager
 ' other file-local stuff goes here
 @enduml

@@ -3,7 +3,7 @@ participant TaxiManager
 @enduml
 
 @startuml(id=COMMON)
-!include _common_seq.iuml
+!include ../_common_seq.iuml
 !define TaxiManager_DELEGATE SpeedyCab
 ' other file-local stuff goes here
 @enduml

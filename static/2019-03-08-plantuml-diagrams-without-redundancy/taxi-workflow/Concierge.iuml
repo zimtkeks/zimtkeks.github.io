@@ -3,7 +3,7 @@ participant Concierge
 @enduml
 
 @startuml(id=COMMON)
-!include _common_seq.iuml
+!include ../_common_seq.iuml
 @enduml
 
 @startuml(id=add)

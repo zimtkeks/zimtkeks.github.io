@@ -1,5 +1,5 @@
 @startuml(id=COMMON)
-!include _common_class.iuml
+!include ../_common_class.iuml
 @enduml
 
 @startuml(id=Concierge)
