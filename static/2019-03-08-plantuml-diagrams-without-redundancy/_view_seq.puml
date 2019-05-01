@@ -9,22 +9,9 @@ endheader
 participant Boss as "Boss <&person>"
 
 !include Concierge.iuml!PARTICIPANT
-!include Tourist.iuml!PARTICIPANT
-!include Taxi.iuml!PARTICIPANT
-!include ITaxiListener.iuml!PARTICIPANT
-!include TaxiManager.iuml!PARTICIPANT
-!include SpeedyCab.iuml!PARTICIPANT
 
-== Initialization ==
+== Cyclic inclusion ==
 
-CALL_METHOD(Boss, Concierge, init)
-
-== Running ==
-
-CALL_METHOD_ASYNC(Boss, Concierge, run)
-loop incoming tourist groups (until sunset)
-    CALL_METHOD(Boss, Concierge, add)
-end
-CALL_METHOD(Boss, Concierge, goHome)
+CALL_METHOD(Boss, Concierge, doThis)
 
 @enduml

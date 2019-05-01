@@ -6,36 +6,15 @@ participant Concierge
 !include _common_seq.iuml
 @enduml
 
-@startuml(id=add)
-!include Concierge.iuml!COMMON
-note over Concierge: pass tourist list to ""run()""
-@enduml
-
-@startuml(id=goHome)
+@startuml(id=doThat)
 !include Concierge.iuml!COMMON
 note over Concierge
-finish ""run()"" loop
-and call it a day
+here: call ""doThis()""
 end note
+'CALL_METHOD_(Concierge, Concierge, doThat)
 @enduml
 
-@startuml(id=init)
+@startuml(id=doThis)
 !include Concierge.iuml!COMMON
-CALL_METHOD(Concierge, TaxiManager, getNewInstance)
-@enduml
-
-@startuml(id=run)
-!include Concierge.iuml!COMMON
-loop for each added ""List<Tourist>""
-    CALL_METHOD(Concierge, TaxiManager, requestTaxi, , empty Taxi)
-
-    note over Concierge: **skip** if no taxi available
-
-    CALL_METHOD(Concierge, Taxi, enter, List<Tourist>)
-    note over Concierge
-    randomly select one
-    of the top 10 sights
-    end note
-    CALL_METHOD_ASYNC(Concierge, Taxi, goTo, sight location)
-end
+CALL_METHOD(Concierge, Concierge, doThat)
 @enduml
