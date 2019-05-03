@@ -11,10 +11,9 @@ participant Concierge
 note over Concierge
 here: call ""doThis()""
 end note
-'CALL_METHOD_(Concierge, Concierge, doThat)
 @enduml
 
 @startuml(id=doThis)
 !include Concierge.iuml!COMMON
-CALL_METHOD(Concierge, Concierge, doThat)
+$CALL_METHOD(Concierge, Concierge, doThat)
 @enduml
