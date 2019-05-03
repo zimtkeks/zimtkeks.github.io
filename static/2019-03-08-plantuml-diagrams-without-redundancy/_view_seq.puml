@@ -14,6 +14,6 @@ participant Boss as "Boss <&person>"
 
 'Without !unquoted:
 '  $CALL_METHOD("Concierge", "Concierge", "doThis")
-$CALL_METHOD(Concierge, Concierge, doThis)
+$CALL_METHOD(Concierge, Concierge, doThis, without //quotes//)
 
 @enduml
