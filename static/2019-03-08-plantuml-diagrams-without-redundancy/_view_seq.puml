@@ -12,6 +12,8 @@ participant Boss as "Boss <&person>"
 
 == Cyclic inclusion ==
 
-CALL_METHOD(Boss, Concierge, doThis)
+'Without !unquoted:
+'  $CALL_METHOD("Concierge", "Concierge", "doThis")
+$CALL_METHOD(Concierge, Concierge, doThis, without //quotes//)
 
 @enduml
