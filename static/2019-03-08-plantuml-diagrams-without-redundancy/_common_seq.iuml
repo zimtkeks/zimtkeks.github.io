@@ -12,11 +12,11 @@
 
             !$GUARD_NAME = "$INCLUDED_" + $TO_CLASS + "_" + $FUNC_NAME
             !if %variable_exists($GUARD_NAME)
-                note over $TO_CLASS: ""$GUARD_NAME" exists, don't include ""$FUNC_NAME"
+                note over $TO_CLASS #orange: ""$GUARD_NAME"" exists, don't include ""$FUNC_NAME""
             !else
                 %set_variable_value($GUARD_NAME, 42)
                 note over $TO_CLASS: ""$GUARD_NAME"" doesn't exist, include ""$FUNC_NAME""
-                !include $TO_CLASS.iuml!$FUNC_NAME
+                !include_many $TO_CLASS.iuml!$FUNC_NAME
                 note over $TO_CLASS: end of ""$FUNC_NAME""
             !endif
 

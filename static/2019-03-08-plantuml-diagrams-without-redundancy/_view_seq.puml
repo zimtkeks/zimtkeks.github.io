@@ -13,5 +13,13 @@ participant Boss as "Boss <&person>"
 == Cyclic inclusion ==
 
 $CALL_METHOD(Boss, Concierge, doThis)
+note over Boss
+Is there a Concierge.iuml?
+!if %file_exists("Concierge.iuml")
+YES!
+!else
+NO!
+!endif
+end note
 
 @enduml
