@@ -28,3 +28,7 @@ gem "github-pages", group: :jekyll_plugins
 # Performance-booster for watching directories on Windows
 #gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
+# As required by https://github.com/zimtkeks/zimtkeks.github.io/security/dependabot/
+gem "addressable", ">= 2.8.0"
+gem "kramdown", ">= 2.3.1"
+gem "nokogiri", ">= 1.12.5"
